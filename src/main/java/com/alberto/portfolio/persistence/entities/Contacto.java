@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Entity //Indica que es una tabla
 @Table(name = "contactos") //Nombre de la tabla en Postgres
 @Data  //Lombok genera Getters, Setters, toString(), etc...
@@ -23,4 +25,12 @@ public class Contacto {
     String email;
     String asunto;
     String mensaje;
+
+    private LocalDateTime fechaRegistro;
+
+    // Este método se ejecuta automáticamente antes de guardar
+    @PrePersist
+    protected void onCreate() {
+        this.fechaRegistro = LocalDateTime.now();
+    }
 }
