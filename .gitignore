@@ -25,5 +25,6 @@ out/
 # Sistema y Log
 .DS_Store
 *.log
-
+.env.*
 .env
+application-dev.yml

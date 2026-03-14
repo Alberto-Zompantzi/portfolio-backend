@@ -21,10 +21,16 @@ public class Contacto {
     private Long id;
 
     //Cada atributo es una columna en la tabla contactos
-    String nombre;
-    String email;
-    String asunto;
-    String mensaje;
+    @Column(nullable = false)
+    private String nombre;
+
+    @Column(nullable = false)
+    private String email;
+    
+    private String asunto;
+
+    @Column(nullable = false, columnDefinition = "TEXT")
+    private String mensaje;
 
     private LocalDateTime fechaRegistro;
 
