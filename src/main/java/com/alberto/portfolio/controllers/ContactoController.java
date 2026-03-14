@@ -30,4 +30,8 @@ public class ContactoController {
         return new ResponseEntity<Contacto>(nuevoContacto, HttpStatus.CREATED);
 
     }
+    @GetMapping("/health")
+    public ResponseEntity<String> healthCheck() {
+        return ResponseEntity.ok("Servidor despierto y listo.");
+    }
 }
